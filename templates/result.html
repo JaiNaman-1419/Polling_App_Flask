@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} Result {% endblock title %}
+{% block css %}
+    <link rel="stylesheet" href="../static/css/result.css">
+{% endblock css %}
+
+{% block body %}
+<div class="container">
+    {% for question in questions %}
+        <div class="card my-5">
+            <div class="card-header">
+                Result (Poll: {{ question.sno }})
+            </div>
+    
+            <div class="card-body">
+                <h3 class="card-title">{{ question.question}}</h3>
+    
+                <ul class="list-group">
+                    <!-- {% for choice in choices %}
+                    {% if question.sno == choice.question_id %}
+                    <li class="lead list-group-item list-group-item-action">{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+                    {% endif %}
+                    {% endfor %} -->
+                    {% set choices = choices_lst[3*(loop.index-1):3*(loop.index-1)+3] %}
+                    {% for choice in choices %}
+                    <li class="lead list-group-item list-group-item-action">{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+</div>
+{% endblock body %}
+

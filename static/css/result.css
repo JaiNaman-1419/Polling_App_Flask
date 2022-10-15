@@ -1,0 +1,23 @@
+.card{
+    width:60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10rem;
+}
+
+.card-text{
+    padding: 2% 1%;
+}
+
+.form-check-input{
+    margin-top: 2.6%;
+}
+
+.list-group{
+    margin-top: 25px;
+}
+
+.list-group-item{
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
